@@ -1311,7 +1311,12 @@
                     </div>
                 </div>
 
-                <form class="quote-form" id="quoteForm">
+                
+<form class="quote-form" id="quoteForm"
+      action="https://formsubmit.co/ogimsmigo@gmail.com"
+      method="POST">
+
+                    
                     <h3>Request a Quotation</h3>
                     <p class="form-intro">
                         Complete the details below to prepare your inquiry.
@@ -1506,19 +1511,25 @@
         document.getElementById("currentYear").textContent =
             new Date().getFullYear();
 
+        
         // =========================
         // QUOTATION FORM
         // =========================
         const quoteForm = document.getElementById("quoteForm");
         const formNotice = document.getElementById("formNotice");
 
-        quoteForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+        // FormSubmit will handle sending the inquiry to your email.
+        quoteForm.addEventListener("submit", function () {
+            formNotice.textContent =
+                "Submitting your quotation request. Please wait...";
+            formNotice.style.color = "#1E3A5A";
+        });
+
 
             // CHANGE THIS TO YOUR REAL BUSINESS EMAIL ADDRESS.
-            const businessEmail = "yourbusiness@example.com";
+            const businessEmail = "ogimsmigo@gmail.com";
 
-            if (businessEmail === "yourbusiness@example.com") {
+            if (businessEmail === "ogimsmigo@gmail.com") {
                 formNotice.textContent =
                     "Please replace yourbusiness@example.com in the JavaScript " +
                     "with your real business email before using this form.";
