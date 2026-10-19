@@ -1316,6 +1316,13 @@
       action="https://formsubmit.co/ogimsmigo@gmail.com"
       method="POST">
 
+      
+    <input type="hidden" name="_subject"
+           value="New ProRic Printing Quotation Request">
+
+    <input type="hidden" name="_template" value="table">
+
+
                     
                     <h3>Request a Quotation</h3>
                     <p class="form-intro">
@@ -1512,18 +1519,26 @@
             new Date().getFullYear();
 
         
+        
         // =========================
         // QUOTATION FORM
         // =========================
         const quoteForm = document.getElementById("quoteForm");
         const formNotice = document.getElementById("formNotice");
+        const quoteButton = quoteForm.querySelector('button[type="submit"]');
 
-        // FormSubmit will handle sending the inquiry to your email.
         quoteForm.addEventListener("submit", function () {
+            if (!quoteForm.checkValidity()) {
+                return;
+            }
+
+            quoteButton.disabled = true;
+            quoteButton.textContent = "Submitting...";
             formNotice.textContent =
                 "Submitting your quotation request. Please wait...";
             formNotice.style.color = "#1E3A5A";
         });
+
 
 
             // CHANGE THIS TO YOUR REAL BUSINESS EMAIL ADDRESS.
